@@ -1,7 +1,7 @@
 console.log('hi')
 
     angular.module('trendingTrivia').component('questions', {
-        templateUrl: 'js/questions.template.html',
+        templateUrl: 'question.html',
         controllerAs: 'questionsCtrl',
 
         controller: function(questionsSrvc, $scope){

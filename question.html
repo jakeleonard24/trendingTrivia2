@@ -1,17 +1,21 @@
-<div class="question-wrapper">
 
-<h3><!-- Question --></h3>
-<div ><!-- Difficulty --></div>
-<div class="gear" >
+<button ng-click="questionsCtrl.getQuestions()"></button>
+<div class="question-wrapper">
+    
+<ul ng-repeat="question in questions">
+    
+  <h3>{{question.question}}</h3>
+  <div >{{question.difficulty}}</div>
+  <div class="gear" >
   <img src="/styles/assets/gear.svg" alt="">
-</div>
-<ul>
+  </div>
+  <ul ng-repeat="(key,value) in question.options">
   <li > <!-- Repeated for each option -->
     <input type="radio">
-      <label><!-- Option text --></label>
+      <label>{{ value}}</label>
   </li>
+  </ul>
 </ul>
-
 </div>
 
 <!-- Modal -->

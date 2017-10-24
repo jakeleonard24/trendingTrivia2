@@ -1,11 +1,13 @@
 <div>
-<button ng-click="questionsCtrl.getQuestions()"></button>
-<button ng-click="questionsCtrl.getLog()"></button>
-<ul ng-repeat="question in questions">
-    <li>{{question.options}}</li>
-</ul>
+    <button ng-click="questionsCtrl.getQuestions()"></button>
+    <button ng-click="questionsCtrl.getLog()"></button>
+    <ul ng-repeat="question in questions">
+        <li>{{question.question}}</li>
+    </ul>
+    
+    <!-- {{questionsCtrl.questions[0].title}} -->
+    <p>hi</p>
+    </div>
+    <script>console.log(questionsCtrl.questions)</script>
 
-<!-- {{questionsCtrl.questions[0].title}} -->
-<p>hi</p>
-</div>
-<script>console.log(questionsCtrl.questions)</script>
+    // ng-repeat="(key,value) in question.options"
