@@ -1,8 +1,8 @@
 
 <button ng-click="questionsCtrl.getQuestions()"></button>
-<div class="question-wrapper">
+<div ng-repeat="question in questions" class="question-wrapper">
     
-<ul ng-repeat="question in questions">
+
     
   <h3>{{question.question}}</h3>
   <div >{{question.difficulty}}</div>
@@ -12,7 +12,7 @@
   <ul ng-repeat="(key,value) in question.options">
   <li > <!-- Repeated for each option -->
     <input type="radio">
-      <label>{{ value}}</label>
+      <label>{{value}}</label>
   </li>
   </ul>
 </ul>
