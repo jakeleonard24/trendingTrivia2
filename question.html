@@ -1,6 +1,12 @@
+<nav>
+    <a ng-click="getQuestions()">All Questions</a>
+    <a ng-click="getByDifficulty(1)">Easy</a>
+    <a ng-click="getByDifficulty(2)">Medium</a>
+    <a ng-click="getByDifficulty(3)">Hard</a>
+    <a>Search by Animal</a>
+  </nav>
 
-
-<div ng-repeat="question in questions" class="question-wrapper">
+<div ng-repeat="question in questions | filter: filter" class="question-wrapper">
     
 
     
@@ -9,12 +15,14 @@
   <div class="gear" >
   <img src="/styles/assets/gear.svg" alt="">
   </div>
-  <ul ng-repeat="(key,value) in question.options">
-  <li > <!-- Repeated for each option -->
-    <input type="radio">
-      <label>{{value}}</label>
-  </li>
-  </ul>
+  <ul>
+      <li ng-repeat="(key, value) in question.options"
+        ng-class="{green: key == chosen_answer && key == question.correct_answer,
+                   red: key == chosen_answer && key != question.correct_answer}"> 
+        <input id="{{question._id}}{{value}}" type="radio" name="chosen_answer" ng-model="chosen_answer" ng-value="key">
+          <label>{{value}}</label>
+      </li>
+    </ul>
 </ul>
 </div>
 <h3 class="change-page right" ng-click="nextPage()">Next Page </h3>

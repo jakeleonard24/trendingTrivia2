@@ -6,6 +6,14 @@ angular.module('trendingTrivia').service('questionsSrvc', function( $http ) {
           });
         };
 
+        this.getByDifficulty = function(difficulty) {
+            return $http({
+              method: 'GET',
+              url: 'https://practiceapi.devmountain.com/api/trivia/questions/difficulty/' +difficulty
+            })
+            
+          }
+
         this.nextPage = function(){
             this.page + 1
         }

@@ -13,16 +13,10 @@
   <header>
     <div></div>
     <h1>Trivia Trends</h1>
-    <button><span>+</span> Add Question</button>
+    <button ng-click="modal=true"><span>+</span> Add Question</button>
   </header>
   <article>
-    <nav>
-      <a>All Questions</a>
-      <a>Easy</a>
-      <a>Medium</a>
-      <a>Hard</a>
-      <a>Search by Animal</a>
-    </nav>
+    
     <div class="search">
       <input type="text" placeholder="Animal to search by">
     </div>
@@ -34,7 +28,7 @@
   
   </article>
 
-  <div class="modal">
+  <div class="modal" ng-model="modal" ng-if="modal">
     <form>
       <h4 class="close">X</h4>
       <span>Question</span><input type="text" ng-model="hi">
