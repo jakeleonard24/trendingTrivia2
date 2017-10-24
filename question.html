@@ -1,5 +1,5 @@
 
-<button ng-click="questionsCtrl.getQuestions()"></button>
+
 <div ng-repeat="question in questions" class="question-wrapper">
     
 
@@ -17,5 +17,7 @@
   </ul>
 </ul>
 </div>
+<h3 class="change-page right" ng-click="nextPage()">Next Page </h3>
+<h3 class="change-page right" ng-click="previousPage()">Previous Page </h3>
 
 <!-- Modal -->

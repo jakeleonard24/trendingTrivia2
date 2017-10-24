@@ -9,7 +9,7 @@
   <link rel="shortcut icon" href="/styles/assets/crownFavicon.png">
 </head>
 
-<body>
+<body ng-controller="pageCtrl">
   <header>
     <div></div>
     <h1>Trivia Trends</h1>
@@ -17,7 +17,7 @@
   </header>
   <article>
     <nav>
-      <a ng-click="questionsCtrl.getQuestions()">All Questions</a>
+      <a>All Questions</a>
       <a>Easy</a>
       <a>Medium</a>
       <a>Hard</a>
@@ -31,7 +31,7 @@
     <ui-view></ui-view>
     <questions></questions>
    
-
+  
   </article>
 
   <div class="modal">
@@ -88,6 +88,7 @@
   <script src="app.js" charset="utf-8"></script>
   <script src="js/questions.component.js"></script>
   <script src="js/questionsSrvc.js"></script>
+  <script src="js/pageCtrl.js"></script>
   
   
   

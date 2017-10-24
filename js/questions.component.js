@@ -5,20 +5,33 @@ console.log('hi')
         controllerAs: 'questionsCtrl',
 
         controller: function(questionsSrvc, $scope){
-            this.page = 0;
+            $scope.page = 0;
             $scope.questions = [];
+            $scope.filter = ''
            
             this.getLog = function(){
                 console.log($scope.questions)
             }
 console.log('bye')
 
-            this.getQuestions = function(){
-                questionsSrvc.getQuestions().then(function(response) {
+            $scope.getQuestions = function(){
+                questionsSrvc.getQuestions($scope.page).then(function(response) {
                     console.log(response, 'response')
                     $scope.questions = response.data
                     
                 })
+            }
+            $scope.getQuestions()
+            $scope.nextPage = function(){
+                $scope.page += 1
+                $scope.getQuestions($scope.page)
+                console.log('page changed', $scope.page)
+            }
+
+            $scope.previousPage = function(){
+                $scope.page -= 1
+                $scope.getQuestions($scope.page)
+                console.log('page changed', $scope.page)
             }
             console.log(this.questions)
             
